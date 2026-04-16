@@ -28,7 +28,7 @@ const nextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' blob: data: https://*.stripe.com https://lh3.googleusercontent.com https://avatars.githubusercontent.com",
               "media-src 'self' blob:",
-              "connect-src 'self' https://*.supabase.co https://api.openai.com https://api.stripe.com wss://*.supabase.co",
+              "connect-src 'self' https://*.supabase.co https://api.anthropic.com https://api.stripe.com wss://*.supabase.co",
               "worker-src 'self' blob:",
               "frame-src https://js.stripe.com https://hooks.stripe.com"
             ].join('; ')
