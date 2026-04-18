@@ -5,7 +5,7 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ── Protected API routes: require same-origin requests (CSRF guard) ──────
-  if (pathname.startsWith('/api/vision/')) {
+  if (pathname.startsWith('/api/vision/') || pathname.startsWith('/api/outreach/')) {
     const origin = request.headers.get('origin');
     const host = request.headers.get('host');
 

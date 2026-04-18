@@ -31,6 +31,11 @@ export default function Navlinks({ user }: NavlinksProps) {
             </Link>
           )}
           {user && (
+            <Link href="/outreach" className={s.link}>
+              OutreachOS
+            </Link>
+          )}
+          {user && (
             <Link href="/account" className={s.link}>
               Account
             </Link>
