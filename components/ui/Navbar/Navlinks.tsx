@@ -26,6 +26,16 @@ export default function Navlinks({ user }: NavlinksProps) {
             Pricing
           </Link>
           {user && (
+            <Link href="/vision" className={s.link}>
+              Vision Studio
+            </Link>
+          )}
+          {user && (
+            <Link href="/outreach" className={s.link}>
+              OutreachOS
+            </Link>
+          )}
+          {user && (
             <Link href="/account" className={s.link}>
               Account
             </Link>

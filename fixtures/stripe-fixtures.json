@@ -4,26 +4,31 @@
   },
   "fixtures": [
     {
-      "name": "prod_hobby",
+      "name": "prod_free",
       "path": "/v1/products",
       "method": "post",
       "params": {
-        "name": "Hobby",
-        "description": "Hobby product description",
+        "name": "Starter",
+        "description": "Get started with basic vision tools: object detection, barcode scanning, and 10 image processing filters. No AI descriptions.",
         "metadata": {
-          "index": 0
+          "index": 0,
+          "ai_requests_per_day": "0",
+          "object_detection": "true",
+          "barcode_scanning": "true",
+          "image_processing": "true",
+          "ai_descriptions": "false"
         }
       }
     },
     {
-      "name": "price_hobby_month",
+      "name": "price_free_month",
       "path": "/v1/prices",
       "method": "post",
       "params": {
-        "product": "${prod_hobby:id}",
+        "product": "${prod_free:id}",
         "currency": "usd",
         "billing_scheme": "per_unit",
-        "unit_amount": 1000,
+        "unit_amount": 0,
         "recurring": {
           "interval": "month",
           "interval_count": 1
@@ -31,14 +36,48 @@
       }
     },
     {
-      "name": "price_hobby_year",
+      "name": "prod_pro",
+      "path": "/v1/products",
+      "method": "post",
+      "params": {
+        "name": "Pro",
+        "description": "Everything in Starter plus unlimited AI image descriptions powered by GPT-4 Vision, advanced feature extraction, batch processing, and API access.",
+        "metadata": {
+          "index": 1,
+          "ai_requests_per_day": "500",
+          "object_detection": "true",
+          "barcode_scanning": "true",
+          "image_processing": "true",
+          "ai_descriptions": "true",
+          "batch_processing": "true",
+          "api_access": "true"
+        }
+      }
+    },
+    {
+      "name": "price_pro_month",
       "path": "/v1/prices",
       "method": "post",
       "params": {
-        "product": "${prod_hobby:id}",
+        "product": "${prod_pro:id}",
         "currency": "usd",
         "billing_scheme": "per_unit",
-        "unit_amount": 10000,
+        "unit_amount": 1900,
+        "recurring": {
+          "interval": "month",
+          "interval_count": 1
+        }
+      }
+    },
+    {
+      "name": "price_pro_year",
+      "path": "/v1/prices",
+      "method": "post",
+      "params": {
+        "product": "${prod_pro:id}",
+        "currency": "usd",
+        "billing_scheme": "per_unit",
+        "unit_amount": 19000,
         "recurring": {
           "interval": "year",
           "interval_count": 1
@@ -46,26 +85,35 @@
       }
     },
     {
-      "name": "prod_freelancer",
+      "name": "prod_enterprise",
       "path": "/v1/products",
       "method": "post",
       "params": {
-        "name": "Freelancer",
-        "description": "Freelancer product description",
+        "name": "Enterprise",
+        "description": "Unlimited AI requests, dedicated support, custom model integration, SLA guarantee, and team management.",
         "metadata": {
-          "index": 1
+          "index": 2,
+          "ai_requests_per_day": "unlimited",
+          "object_detection": "true",
+          "barcode_scanning": "true",
+          "image_processing": "true",
+          "ai_descriptions": "true",
+          "batch_processing": "true",
+          "api_access": "true",
+          "custom_models": "true",
+          "sla": "true"
         }
       }
     },
     {
-      "name": "price_freelancer_month",
+      "name": "price_enterprise_month",
       "path": "/v1/prices",
       "method": "post",
       "params": {
-        "product": "${prod_freelancer:id}",
+        "product": "${prod_enterprise:id}",
         "currency": "usd",
         "billing_scheme": "per_unit",
-        "unit_amount": 2000,
+        "unit_amount": 9900,
         "recurring": {
           "interval": "month",
           "interval_count": 1
@@ -73,14 +121,14 @@
       }
     },
     {
-      "name": "price_freelancer_year",
+      "name": "price_enterprise_year",
       "path": "/v1/prices",
       "method": "post",
       "params": {
-        "product": "${prod_freelancer:id}",
+        "product": "${prod_enterprise:id}",
         "currency": "usd",
         "billing_scheme": "per_unit",
-        "unit_amount": 20000,
+        "unit_amount": 99000,
         "recurring": {
           "interval": "year",
           "interval_count": 1
